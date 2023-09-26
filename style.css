@@ -28,7 +28,7 @@
 }
 
 .content {
-    font-size: 64px;
+    font-size: 80px;
 }
 
 .buttons {
@@ -47,5 +47,5 @@ button {
 }
 
 .equals {
-    width: 350px;
+    width: 250px;
 }
