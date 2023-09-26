@@ -1,0 +1,32 @@
+.container {
+    display: flex;
+    justify-content: center;
+    margin-top: 100px;
+}
+
+.calculator {
+    height: 750px;
+    width: 450px;
+    border: solid 1px black;
+    border-radius: 50px;
+    background-color: lightgray;
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+}
+
+.display {
+    height: 70px;
+    width: 425px;
+    border: solid 1px black;
+    border-radius: 30px;
+    background-color: whitesmoke;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 10px;
+}
+
+.content {
+    font-size: 64px;
+}
