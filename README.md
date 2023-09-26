@@ -1,0 +1,1 @@
+In this project I will demonstrate html and css skills to build a calculator display. I will then use javascript and DOM manipulation to use buttons and functions to perform calculations.
