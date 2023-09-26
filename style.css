@@ -11,7 +11,7 @@
     border-radius: 50px;
     background-color: lightgray;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     padding: 10px;
 }
 
@@ -29,4 +29,23 @@
 
 .content {
     font-size: 64px;
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 30px;
+}
+
+button {
+    font-size: 64px;
+    height: 110px;
+    width: 110px;
+    border-radius: 30px;
+}
+
+.equals {
+    width: 350px;
 }
