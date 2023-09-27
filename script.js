@@ -43,7 +43,13 @@ document.addEventListener("DOMContentLoaded", function() {
 
     decimal.addEventListener("click", function() {
         addDecimal();
-    })
+        currentScreen.textContent = currentValue;
+    });
+
+    backspace.addEventListener("click", function() {
+        removeLast();
+        currentScreen.textContent = currentValue;
+    });
 })
 
 function handleNumber(num) {
@@ -64,12 +70,16 @@ function calculate() {
 
     if (operator === "+") {
         previousValue += currentValue;
+        currentValue = previousValue;
     } else if (operator === "-") {
         previousValue -= currentValue;
+        currentValue = previousValue;
     } else if (operator === "X") {
         previousValue *= currentValue;
+        currentValue = previousValue;
     } else {
         previousValue /= currentValue;
+        currentValue = previousValue;
     }
 
     previousValue = roundNumber(previousValue);
@@ -86,6 +96,10 @@ function addDecimal() {
         currentValue += ".";
     }
 };
+
+function removeLast() {
+    currentValue = currentValue.substring(0, currentValue.length -1);
+}
 
 /*const add = function add(num1,num2) {
     return result = num1+num2;
