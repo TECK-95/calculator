@@ -22,6 +22,28 @@ document.addEventListener("DOMContentLoaded", function() {
         previousScreen.textContent = previousValue + " " + operator;
         currentScreen.textContent = currentValue;
     }));
+
+    clear.addEventListener("click", function() {
+        previousValue = "";
+        currentValue = "";
+        operator = "";
+        previousScreen.textContent = currentValue;
+        currentScreen.textContent = currentValue;
+    });
+
+    equals.addEventListener("click", function() {
+        calculate();
+        previousScreen.textContent = "";
+        if (previousValue.length <=18) {
+            currentScreen.textContent = previousValue;
+        } else {
+            currentScreen.textContent = previousValue.slice(0, 18) + "...";
+        }
+    });
+
+    decimal.addEventListener("click", function() {
+        addDecimal();
+    })
 })
 
 function handleNumber(num) {
@@ -34,6 +56,35 @@ function handleOperator(op) {
     operator = op;
     previousValue = currentValue;
     currentValue = "";
+};
+
+function calculate() {
+    previousValue = Number(previousValue);
+    currentValue = Number(currentValue);
+
+    if (operator === "+") {
+        previousValue += currentValue;
+    } else if (operator === "-") {
+        previousValue -= currentValue;
+    } else if (operator === "X") {
+        previousValue *= currentValue;
+    } else {
+        previousValue /= currentValue;
+    }
+
+    previousValue = roundNumber(previousValue);
+    previousValue = previousValue.toString();
+    currentValue = previousValue.toString();
+};
+
+function roundNumber(num) {
+    return Math.round(num *1000000000000000000) / 1000000000000000000;
+};
+
+function addDecimal() {
+    if (!currentValue.includes(".")) {
+        currentValue += ".";
+    }
 };
 
 /*const add = function add(num1,num2) {
