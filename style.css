@@ -22,13 +22,18 @@
     border-radius: 30px;
     background-color: whitesmoke;
     display: flex;
-    justify-content: flex-end;
-    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
     padding: 10px;
 }
 
-.content {
-    font-size: 80px;
+.previous {
+    font-size: 24px;
+}
+
+.current {
+    font-size: 48px;
 }
 
 .buttons {
