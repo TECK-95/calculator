@@ -1,15 +1,42 @@
-const display = document.querySelector(".display");
-const buttons = document.querySelectorAll(".buttons");
-const one = document.querySelector(".one");
-const clear = document.querySelector(".clear");
-one.addEventListener("click", () => {
-    
-});
-clear.addEventListener("click", () => {
-    content.textContent = 0;
-});
+let operator = "";
+let previousValue = "";
+let currentValue = "";
 
-const add = function add(num1,num2) {
+document.addEventListener("DOMContentLoaded", function() {
+    const clear = document.querySelector(".clear");
+    const equals = document.querySelector(".equals");
+    const decimal = document.querySelector(".decimal");
+    const backspace = document.querySelector(".backspace");
+    let numbers = document.querySelectorAll(".number");
+    let operators = document.querySelectorAll(".operator");
+    let previousScreen = document.querySelector(".previous");
+    let currentScreen = document.querySelector(".current");
+
+    numbers.forEach((number) => number.addEventListener("click", function(e) {
+        handleNumber(e.target.textContent);
+        currentScreen.textContent = currentValue;
+    }));
+
+    operators.forEach((op) => op.addEventListener("click", function(e) {
+        handleOperator(e.target.textContent);
+        previousScreen.textContent = previousValue + " " + operator;
+        currentScreen.textContent = currentValue;
+    }));
+})
+
+function handleNumber(num) {
+    if (currentValue.length <= 18) {
+        currentValue += num;
+    };
+};
+
+function handleOperator(op) {
+    operator = op;
+    previousValue = currentValue;
+    currentValue = "";
+};
+
+/*const add = function add(num1,num2) {
     return result = num1+num2;
     console.log(result);
 };
@@ -39,4 +66,4 @@ function operate(operator,num1,num2) {
     } else if (operator=divide) {
         divide(num1,num2);
     }
-}
+}*/
