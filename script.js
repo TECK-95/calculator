@@ -37,7 +37,7 @@ document.addEventListener("DOMContentLoaded", function() {
         if (previousValue.length <=18) {
             currentScreen.textContent = previousValue;
         } else {
-            currentScreen.textContent = previousValue.slice(0, 18) + "...";
+            currentScreen.textContent = previousValue.slice(0, 16) + "...";
         }
     });
 
@@ -53,7 +53,7 @@ document.addEventListener("DOMContentLoaded", function() {
 })
 
 function handleNumber(num) {
-    if (currentValue.length <= 18) {
+    if (currentValue.length <= 16) {
         currentValue += num;
     };
 };
