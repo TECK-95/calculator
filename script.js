@@ -80,7 +80,7 @@ function calculate() {
     } else {
         previousValue /= currentValue;
         currentValue = previousValue;
-    }
+    };
 
     previousValue = roundNumber(previousValue);
     previousValue = previousValue.toString();
