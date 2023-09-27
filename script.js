@@ -30,3 +30,15 @@ const divide = function divide(num1,num2) {
     return result = num1/num2;
     console.log(result);
 };
+
+function operate(operator,num1,num2) {
+    if (operator=add) {
+        add(num1,num2);
+    } else if (operator=substract) {
+        substract(num1,num2);
+    } else if (operator=multiply) {
+        multiply(num1,num2);
+    } else if (operator=divide) {
+        divide(num1,num2);
+    }
+}
